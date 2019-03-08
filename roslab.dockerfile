@@ -43,7 +43,9 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-ENV PATH="/usr/local/MATLAB/from-host/bin:${PATH}"
+RUN pip3 install matlab_kernel
+
+ENV PATH="/usr/local/MATLAB/R2017a/bin:${PATH}"
 
 ##################################### COPY #####################################
 
